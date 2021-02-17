@@ -1,10 +1,12 @@
 import React from "react";
 import Profile from "./components/Profile";
 import user from "./user.json";
+import statisticalData from "./statistical-data.json";
+import Statistics from "./components/Statistics";
 
 const App = () => {
   return (
-  <div>
+    <div>
       <Profile
         name={user.name}
         tag={user.tag}
@@ -12,31 +14,9 @@ const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-   </div>
+      <Statistics title="Upload stats" stats={statisticalData} />
+      <Statistics stats={statisticalData} />
+    </div>
   );
 };
 export default App;
-
-
-
-
-// const App = () => {
-//   return (
-//   <div>
-//        <ul>
-//       {users.map(({ id, avatar, name, tag, location, stats }) => (
-//         <li key={id}> 
-//           <Profile
-//         name={name}
-//         tag={tag}
-//         location={location}
-//         avatar={avatar}
-//         stats={stats}
-//       />
-//     </li>
-//    ))}
-//    </ul>
-//   </div>
-//   );
-// };
-// export default App;
