@@ -1,6 +1,7 @@
 import React from "react";
 import propTypes from "prop-types";
 import FriendListItem from "./FriendListItem";
+import defaultImage from './defaultImg.jpg'
 
 const FriendList = ({ friends }) => (
   <ul className="friend-list">
@@ -14,11 +15,15 @@ const FriendList = ({ friends }) => (
     ))}
   </ul>
 );
+     
+FriendList.defaultProps = {
+  avatar: defaultImage,
+}  
 
 FriendList.propTypes = {
   friends: propTypes.arrayOf(
     propTypes.shape({
-      avatar: propTypes.string.isRequired,
+      avatar: propTypes.string,
       name: propTypes.string.isRequired,
       isOnline: propTypes.bool.isRequired,
       id: propTypes.number.isRequired,
