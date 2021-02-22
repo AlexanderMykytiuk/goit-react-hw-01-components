@@ -2,9 +2,10 @@ import React from "react";
 import propTypes from "prop-types";
 import FriendListItem from "./FriendListItem";
 import defaultImage from '../profile/defaultImg.jpg'
+import styles from "./Friends.module.css"
 
 const FriendList = ({ friends }) => (
-  <ul className="friend-list">
+  <ul className={styles.friend_list}>
     {friends.map(({ avatar, name, isOnline, id }) => (
       <FriendListItem
         isOnline={isOnline}
